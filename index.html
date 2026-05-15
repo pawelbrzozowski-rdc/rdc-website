@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>RDC | Analityka i automatyzacja dla firm</title>
-  <meta name="description" content="RDC projektuje środowiska analityczne, systemy decyzyjne i automatyzacje, które porządkują procesy, integracje i działanie firmy.">
+  <title>RDC | Analytics as a Service</title>
+  <meta name="description" content="RDC pomaga porządkować dane, łączyć źródła informacji i budować gotowe raporty w Lookerze.">
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
@@ -16,157 +16,429 @@
         </span>
         <span class="brand-copy">
           <strong>RDC</strong>
-          <small>analityka • procesy • automatyzacja</small>
+          <small>Analytics as a Service</small>
         </span>
       </a>
+
       <nav class="nav">
         <a href="#uslugi">Usługi</a>
-        <a href="#model">Model pracy</a>
+        <a href="#jak-pracujemy">Jak pracujemy</a>
         <a href="#podejscie">Podejście</a>
         <a href="#kontakt">Kontakt</a>
       </nav>
+
       <a class="button ghost desktop-only" href="mailto:pawel.brzozowski@rdc-analitics.com">Umów rozmowę</a>
     </header>
 
     <main>
       <section class="hero" id="start">
         <div class="hero-copy">
-          <span class="eyebrow">RDC-Analitics</span>
-          <h1>Dane, analityka i automatyzacja, które porządkują sposób działania firmy.</h1>
+          <span class="eyebrow">Analytics as a Service</span>
+          <h1>Porządkujemy dane, łączymy źródła i budujemy gotowe raporty w Lookerze.</h1>
           <p class="hero-lead">
-            Projektujemy środowiska analityczne i operacyjne, które łączą KPI, procesy, integracje oraz delivery
-            w jeden czytelny system pracy. Bez chaosu, bez przypadkowych narzędzi, z naciskiem na realną sprawczość.
+            RDC pomaga firmom zamienić rozproszone pliki, systemy i ręczne zestawienia w jeden czytelny model
+            raportowy. Dzięki temu właściciel i zespół widzą te same liczby i podejmują decyzje na podstawie
+            spójnych danych.
           </p>
 
           <div class="hero-actions">
-            <a class="button" href="#kontakt">Porozmawiajmy o wdrożeniu</a>
-            <a class="button secondary" href="#model">Zobacz model RDC</a>
+            <a class="button" href="#kontakt">Porozmawiajmy o danych</a>
+            <a class="button secondary" href="#uslugi">Zobacz zakres usług</a>
           </div>
 
           <div class="hero-points">
             <article>
-              <strong>BI i KPI</strong>
-              <p>Mapy danych, dashboardy i logika raportowa wspierająca decyzje.</p>
+              <strong>Zarządzanie danymi</strong>
+              <p>Porządkujemy strukturę źródeł, definicje KPI i logikę raportowania.</p>
             </article>
             <article>
-              <strong>Architektura operacyjna</strong>
-              <p>Porządek procesów, dokumentacji i odpowiedzialności potrzebny do sprawnego wzrostu.</p>
+              <strong>Łączenie źródeł danych</strong>
+              <p>Składamy sprzedaż, operacje i finanse w jeden wspólny obraz firmy.</p>
             </article>
             <article>
-              <strong>Automatyzacja delivery</strong>
-              <p>Integracje, alerty i automatyzacje, które porządkują codzienną pracę operacyjną.</p>
+              <strong>Raporty w Lookerze</strong>
+              <p>Projektujemy dashboardy gotowe do codziennej pracy zarządczej i operacyjnej.</p>
             </article>
           </div>
         </div>
 
-        <aside class="hero-visual" aria-label="Schemat wartości RDC">
-          <div class="visual-card visual-signal">
-            <div class="signal-grid"></div>
-            <div class="signal-orbit orbit-a"></div>
-            <div class="signal-orbit orbit-b"></div>
-            <div class="signal-panel">
-              <div class="panel-head">
-                <span class="panel-kicker">System RDC</span>
-                <span class="panel-status">Operational</span>
+        <aside class="hero-visual" aria-label="Przykładowy dashboard RDC">
+          <div class="visual-card">
+            <div class="visual-dashboard">
+              <div class="dashboard-head">
+                <div class="dashboard-title-group">
+                  <span class="panel-kicker">RDC dashboard preview</span>
+                  <h2>Jeden widok na najważniejsze liczby.</h2>
+                </div>
+                <span class="panel-status">Looker-ready</span>
               </div>
-              <div class="bar-cluster" aria-hidden="true">
-                <span style="--h: 36%"></span>
-                <span style="--h: 58%"></span>
-                <span style="--h: 71%"></span>
-                <span style="--h: 83%"></span>
+
+              <div class="dashboard-kpis">
+                <article class="kpi-card">
+                  <span class="kpi-label">Przychód</span>
+                  <strong>1.24M</strong>
+                  <small>przykładowy widok zarządczy</small>
+                </article>
+                <article class="kpi-card">
+                  <span class="kpi-label">Marża</span>
+                  <strong>21.8%</strong>
+                  <small>jedna definicja dla całej firmy</small>
+                </article>
+                <article class="kpi-card">
+                  <span class="kpi-label">Zamówienia</span>
+                  <strong>2 480</strong>
+                  <small>spójne źródła i jedno odczytanie</small>
+                </article>
               </div>
-              <ul class="value-list">
-                <li>Priorytety biznesowe i backlog</li>
-                <li>KPI, model danych i decyzji</li>
-                <li>Procesy, integracje i środowisko</li>
-                <li>Automatyzacje, alerty i delivery</li>
-              </ul>
+
+              <div class="chart-frame">
+                <div class="chart-copy">
+                  <strong>Sprzedaż i rentowność</strong>
+                  <span>Poglądowy dashboard łączący wiele źródeł w jeden czytelny raport.</span>
+                </div>
+
+                <svg class="chart-svg" viewBox="0 0 620 320" role="img" aria-label="Przykładowy wykres trendu i wartości miesięcznych">
+                  <defs>
+                    <linearGradient id="barGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stop-color="#4fd1ff"></stop>
+                      <stop offset="100%" stop-color="#1c5ea2"></stop>
+                    </linearGradient>
+                    <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stop-color="#8fe4ff"></stop>
+                      <stop offset="100%" stop-color="#25b7ff"></stop>
+                    </linearGradient>
+                    <filter id="lineGlow">
+                      <feGaussianBlur stdDeviation="4" result="blur"></feGaussianBlur>
+                      <feMerge>
+                        <feMergeNode in="blur"></feMergeNode>
+                        <feMergeNode in="SourceGraphic"></feMergeNode>
+                      </feMerge>
+                    </filter>
+                  </defs>
+
+                  <rect x="18" y="18" width="584" height="284" rx="24" fill="rgba(7,26,46,0.66)" stroke="rgba(255,255,255,0.08)"></rect>
+
+                  <g stroke="rgba(255,255,255,0.08)" stroke-width="1">
+                    <line x1="56" y1="252" x2="566" y2="252"></line>
+                    <line x1="56" y1="205" x2="566" y2="205"></line>
+                    <line x1="56" y1="158" x2="566" y2="158"></line>
+                    <line x1="56" y1="111" x2="566" y2="111"></line>
+                    <line x1="56" y1="64" x2="566" y2="64"></line>
+                  </g>
+
+                  <g fill="url(#barGradient)">
+                    <rect x="86" y="176" width="48" height="76" rx="14"></rect>
+                    <rect x="170" y="146" width="48" height="106" rx="14"></rect>
+                    <rect x="254" y="128" width="48" height="124" rx="14"></rect>
+                    <rect x="338" y="112" width="48" height="140" rx="14"></rect>
+                    <rect x="422" y="88" width="48" height="164" rx="14"></rect>
+                    <rect x="506" y="70" width="48" height="182" rx="14"></rect>
+                  </g>
+
+                  <path
+                    d="M110 214 C140 178, 164 166, 194 154 S250 134, 278 138 S332 168, 362 160 S420 114, 446 106 S500 86, 530 92"
+                    fill="none"
+                    stroke="url(#lineGradient)"
+                    stroke-width="6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    filter="url(#lineGlow)"
+                  ></path>
+
+                  <g fill="#8fe4ff" stroke="#0b243f" stroke-width="4">
+                    <circle cx="110" cy="214" r="7"></circle>
+                    <circle cx="194" cy="154" r="7"></circle>
+                    <circle cx="278" cy="138" r="7"></circle>
+                    <circle cx="362" cy="160" r="7"></circle>
+                    <circle cx="446" cy="106" r="7"></circle>
+                    <circle cx="530" cy="92" r="7"></circle>
+                  </g>
+                </svg>
+              </div>
+
+              <div class="source-grid">
+                <article class="source-card">
+                  <strong>ERP</strong>
+                  <span>sprzedaż i zamówienia</span>
+                </article>
+                <article class="source-card">
+                  <strong>E-commerce</strong>
+                  <span>dane kanałów sprzedaży</span>
+                </article>
+                <article class="source-card">
+                  <strong>Sheets / CSV</strong>
+                  <span>pliki i ręczne zestawienia</span>
+                </article>
+                <article class="source-card">
+                  <strong>Finanse</strong>
+                  <span>marża, koszty i wynik</span>
+                </article>
+              </div>
+
+              <p class="dashboard-note">
+                Tworzymy raporty, które porządkują dane wejściowe i dają gotowe KPI do codziennej pracy.
+              </p>
             </div>
           </div>
         </aside>
       </section>
 
       <section class="section trust-strip" aria-label="Obszary działania">
-        <div class="strip-item">Dashboardy zarządcze</div>
-        <div class="strip-item">KPI i data mapping</div>
-        <div class="strip-item">Architektura procesów</div>
-        <div class="strip-item">Automatyzacje operacyjne</div>
-        <div class="strip-item">Integracje i delivery</div>
+        <article class="strip-item">
+          <span class="strip-badge"></span>
+          <strong>Porządek danych</strong>
+          <small>źródła, definicje i logika raportowania</small>
+        </article>
+        <article class="strip-item">
+          <span class="strip-badge"></span>
+          <strong>Łączenie źródeł</strong>
+          <small>sprzedaż, operacje i finanse w jednym modelu</small>
+        </article>
+        <article class="strip-item">
+          <span class="strip-badge"></span>
+          <strong>KPI i definicje</strong>
+          <small>jedna interpretacja liczb dla całej firmy</small>
+        </article>
+        <article class="strip-item">
+          <span class="strip-badge"></span>
+          <strong>Dashboardy zarządcze</strong>
+          <small>widoki dla właściciela i liderów zespołów</small>
+        </article>
+        <article class="strip-item">
+          <span class="strip-badge"></span>
+          <strong>Raporty w Lookerze</strong>
+          <small>czytelne kokpity gotowe do codziennej pracy</small>
+        </article>
+      </section>
+
+      <section class="section showcase-section" aria-label="Przykładowe widoki dashboardów">
+        <div class="section-heading narrow">
+          <span class="eyebrow">Przykładowe widoki</span>
+          <h2>Raporty powinny wyglądać jak narzędzie do decyzji, a nie tylko zbiór wykresów.</h2>
+          <p>
+            Dlatego przygotowujemy dashboardy w kilku perspektywach: dla zarządu, dla sprzedaży oraz dla oceny
+            rentowności. Każdy widok opiera się na tej samej logice danych, ale odpowiada na inne pytania.
+          </p>
+        </div>
+
+        <div class="showcase-grid">
+          <article class="showcase-card showcase-card-large">
+            <div class="showcase-topline">Dashboard zarządczy</div>
+            <div class="showcase-metrics">
+              <div class="mini-kpi">
+                <span>Przychód</span>
+                <strong>1.24M</strong>
+              </div>
+              <div class="mini-kpi">
+                <span>Marża</span>
+                <strong>21.8%</strong>
+              </div>
+              <div class="mini-kpi">
+                <span>Trend</span>
+                <strong>+14%</strong>
+              </div>
+            </div>
+
+            <div class="showcase-chart">
+              <svg class="showcase-svg" viewBox="0 0 700 340" role="img" aria-label="Przykładowy dashboard zarządczy z wykresem miesięcznym">
+                <defs>
+                  <linearGradient id="showcaseBarGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#5ad5ff"></stop>
+                    <stop offset="100%" stop-color="#2469af"></stop>
+                  </linearGradient>
+                  <linearGradient id="showcaseLineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#9de9ff"></stop>
+                    <stop offset="100%" stop-color="#28b6ff"></stop>
+                  </linearGradient>
+                </defs>
+
+                <rect x="18" y="18" width="664" height="304" rx="28" fill="rgba(8,26,45,0.78)" stroke="rgba(255,255,255,0.08)"></rect>
+
+                <g stroke="rgba(255,255,255,0.08)" stroke-width="1">
+                  <line x1="70" y1="270" x2="640" y2="270"></line>
+                  <line x1="70" y1="220" x2="640" y2="220"></line>
+                  <line x1="70" y1="170" x2="640" y2="170"></line>
+                  <line x1="70" y1="120" x2="640" y2="120"></line>
+                  <line x1="70" y1="70" x2="640" y2="70"></line>
+                </g>
+
+                <g fill="url(#showcaseBarGradient)">
+                  <rect x="102" y="196" width="54" height="74" rx="16"></rect>
+                  <rect x="190" y="158" width="54" height="112" rx="16"></rect>
+                  <rect x="278" y="144" width="54" height="126" rx="16"></rect>
+                  <rect x="366" y="124" width="54" height="146" rx="16"></rect>
+                  <rect x="454" y="92" width="54" height="178" rx="16"></rect>
+                  <rect x="542" y="76" width="54" height="194" rx="16"></rect>
+                </g>
+
+                <path
+                  d="M129 232 C158 196, 186 176, 217 174 S281 200, 310 184 S372 140, 398 146 S463 118, 481 110 S541 86, 569 94"
+                  fill="none"
+                  stroke="url(#showcaseLineGradient)"
+                  stroke-width="8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+
+                <g fill="#aaf0ff" stroke="#0b243f" stroke-width="5">
+                  <circle cx="129" cy="232" r="8"></circle>
+                  <circle cx="217" cy="174" r="8"></circle>
+                  <circle cx="310" cy="184" r="8"></circle>
+                  <circle cx="398" cy="146" r="8"></circle>
+                  <circle cx="481" cy="110" r="8"></circle>
+                  <circle cx="569" cy="94" r="8"></circle>
+                </g>
+              </svg>
+            </div>
+          </article>
+
+          <article class="showcase-card showcase-card-sales">
+            <div class="showcase-topline">Kanały sprzedaży</div>
+            <div class="channel-stack">
+              <div class="channel-row">
+                <div class="channel-head">
+                  <strong>Marketplace</strong>
+                  <span>38%</span>
+                </div>
+                <div class="channel-bar"><span style="width: 38%"></span></div>
+              </div>
+              <div class="channel-row">
+                <div class="channel-head">
+                  <strong>Sklep online</strong>
+                  <span>27%</span>
+                </div>
+                <div class="channel-bar"><span style="width: 27%"></span></div>
+              </div>
+              <div class="channel-row">
+                <div class="channel-head">
+                  <strong>B2B</strong>
+                  <span>22%</span>
+                </div>
+                <div class="channel-bar"><span style="width: 22%"></span></div>
+              </div>
+              <div class="channel-row">
+                <div class="channel-head">
+                  <strong>Pozostałe</strong>
+                  <span>13%</span>
+                </div>
+                <div class="channel-bar"><span style="width: 13%"></span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="showcase-card showcase-card-margin">
+            <div class="showcase-topline">Rentowność i marża</div>
+            <div class="donut-wrap">
+              <div class="donut-chart">
+                <span>21.8%</span>
+              </div>
+
+              <div class="donut-legend">
+                <div class="legend-row">
+                  <span class="legend-swatch swatch-cyan"></span>
+                  <strong>Marża brutto</strong>
+                  <small>najmocniejszy wynik</small>
+                </div>
+                <div class="legend-row">
+                  <span class="legend-swatch swatch-blue"></span>
+                  <strong>Koszty operacyjne</strong>
+                  <small>obszar do optymalizacji</small>
+                </div>
+                <div class="legend-row">
+                  <span class="legend-swatch swatch-ice"></span>
+                  <strong>Wynik netto</strong>
+                  <small>czytelny wpływ na decyzje</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="margin-grid">
+              <div class="margin-chip">
+                <span>Top linia</span>
+                <strong>+12.4%</strong>
+              </div>
+              <div class="margin-chip">
+                <span>Marża m/m</span>
+                <strong>+2.1 pp</strong>
+              </div>
+            </div>
+          </article>
+        </div>
       </section>
 
       <section class="section" id="uslugi">
         <div class="section-heading">
           <span class="eyebrow">Usługi</span>
-          <h2>Budujemy porządek operacyjny wokół danych, procesów i automatyzacji.</h2>
+          <h2>Pomagamy firmom pracować na danych, które są spójne, czytelne i gotowe do raportowania.</h2>
           <p>
-            RDC łączy myślenie analityczne, architekturę procesów i techniczne wdrożenie tak,
-            żeby firma miała nie tylko narzędzia, ale sprawny system pracy.
+            Nie budujemy technologicznej otoczki dla samej technologii. Bierzemy rozproszone dane i przygotowujemy
+            z nich czytelny system raportowy dopasowany do realnych pytań biznesowych.
           </p>
         </div>
 
         <div class="service-grid">
           <article class="service-card">
-            <h3>Analityka i decision systems</h3>
-            <p>Projektowanie KPI, dashboardów, logiki raportowej oraz map danych dla zarządu i zespołów operacyjnych.</p>
+            <h3>Porządek danych</h3>
+            <p>Układamy definicje, źródła i strukturę danych tak, aby raport opierał się na spójnym fundamencie.</p>
             <ul>
-              <li>dashboardy i cockpit management</li>
-              <li>data mapping i specyfikacje BI</li>
-              <li>modelowanie przepływu informacji</li>
+              <li>audyt źródeł i jakości danych</li>
+              <li>definicje KPI i słownik metryk</li>
+              <li>mapowanie pól oraz logiki raportowej</li>
             </ul>
           </article>
 
           <article class="service-card">
-            <h3>Architektura operacyjna i wiedza</h3>
-            <p>Porządkujemy wiedzę firmową, dokumentację, role i standard pracy tak, aby procesy były czytelne i skalowalne.</p>
+            <h3>Łączenie źródeł danych</h3>
+            <p>Łączymy dane z różnych miejsc w jeden model gotowy do analizy, raportowania i codziennego użycia.</p>
             <ul>
-              <li>struktura procesów i odpowiedzialności</li>
-              <li>struktura dokumentacji i wiedzy</li>
-              <li>operacyjne scenariusze pracy zespołu</li>
+              <li>sprzedaż, operacje i finanse w jednym widoku</li>
+              <li>uporządkowanie importów i odświeżeń</li>
+              <li>przygotowanie modelu pod dashboardy</li>
             </ul>
           </article>
 
           <article class="service-card">
-            <h3>Automatyzacja, integracje i delivery</h3>
-            <p>Spinamy alerty, integracje i automatyzacje w środowisko, które daje stabilny rytm pracy i obsługi klienta.</p>
+            <h3>Raporty i dashboardy w Lookerze</h3>
+            <p>Projektujemy raporty, które właściciel i zespół mogą otworzyć i od razu zrozumieć.</p>
             <ul>
-              <li>automatyzacje procesów</li>
-              <li>alerty i monitoring</li>
-              <li>integracje i uruchomienie środowiska</li>
+              <li>kokpity zarządcze i raporty działowe</li>
+              <li>widoki sprzedaży, rentowności i operacji</li>
+              <li>przejrzysty układ do codziennej pracy</li>
             </ul>
           </article>
         </div>
       </section>
 
-      <section class="section section-dark" id="model">
+      <section class="section section-dark" id="jak-pracujemy">
         <div class="section-heading narrow light">
-          <span class="eyebrow">Model RDC</span>
-          <h2>Pracujemy w uporządkowanym modelu odpowiedzialności.</h2>
+          <span class="eyebrow">Jak pracujemy</span>
+          <h2>Od pytań biznesowych do gotowego raportu.</h2>
           <p>
-            Dzięki temu każdy etap wdrożenia ma jasny cel, a projekt nie rozpada się
-            między strategią, analityką, techniką i operacyjnym utrzymaniem.
+            Zaczynamy od tego, co firma naprawdę chce widzieć w liczbach. Dopiero potem układamy dane, łączymy
+            źródła i projektujemy dashboard, który da się wykorzystywać w codziennej pracy.
           </p>
         </div>
 
         <div class="layers-grid">
           <article class="layer-card">
-            <h3>Biznes i komunikacja</h3>
-            <p>Zbieramy potrzeby, priorytety i backlog działań.</p>
-            <small>ustalenie celu, zakresu i kierunku prac</small>
+            <h3>Pytania i KPI</h3>
+            <p>Ustalamy, jakie decyzje raport ma wspierać i które wskaźniki są naprawdę istotne.</p>
+            <small>zakres, definicje i priorytety raportowania</small>
           </article>
           <article class="layer-card">
-            <h3>Analityka i projekt</h3>
-            <p>Projektujemy KPI, zakres wdrożenia i architekturę informacji.</p>
-            <small>przełożenie potrzeb na model danych i decyzji</small>
+            <h3>Porządek danych</h3>
+            <p>Czyścimy logikę danych i ustalamy, z których źródeł budujemy jeden wspólny obraz firmy.</p>
+            <small>spójny model danych i definicji</small>
           </article>
           <article class="layer-card">
-            <h3>Technologia i integracje</h3>
-            <p>Budujemy środowisko, integracje, prototypy i techniczne podstawy wdrożenia.</p>
-            <small>uruchomienie technicznej strony rozwiązania</small>
+            <h3>Łączenie źródeł</h3>
+            <p>Składamy dane z wielu miejsc w jedną strukturę gotową do raportowania i odświeżania.</p>
+            <small>połączenie źródeł bez ręcznego chaosu</small>
           </article>
           <article class="layer-card">
-            <h3>Automatyzacja i delivery</h3>
-            <p>Porządkujemy alerty, automatyzacje i operacyjne działanie całości.</p>
-            <small>stabilne działanie i rozwój po wdrożeniu</small>
+            <h3>Dashboard w Lookerze</h3>
+            <p>Budujemy końcowy raport tak, aby był czytelny, szybki i użyteczny dla właściciela oraz zespołu.</p>
+            <small>gotowe widoki do pracy zarządczej i operacyjnej</small>
           </article>
         </div>
       </section>
@@ -174,41 +446,41 @@
       <section class="section" id="podejscie">
         <div class="section-heading">
           <span class="eyebrow">Podejście RDC</span>
-          <h2>Najpierw porządek w decyzjach i procesach, potem narzędzia.</h2>
+          <h2>Najpierw czytelność biznesowa, potem forma raportu.</h2>
           <p>
-            RDC nie zaczyna od przypadkowego wdrożenia narzędzi. Najpierw porządkujemy backlog, logikę decyzji
-            i obieg informacji, a dopiero potem dobieramy dashboardy, integracje i automatyzacje.
+            Dobry dashboard nie zaczyna się od kolorów i wykresów. Zaczyna się od właściwych pytań, uporządkowanych
+            danych i takiego układu informacji, z którego zespół naprawdę korzysta.
           </p>
         </div>
 
         <div class="process-grid">
           <article class="process-card">
-            <h3>Priorytety i backlog</h3>
-            <p>Zaczynamy od potrzeb biznesowych, priorytetów i uporządkowanego zakresu działań.</p>
+            <h3>Co raport ma wyjaśniać?</h3>
+            <p>Ustalamy, jakie decyzje mają być prostsze dzięki raportowi i jak mierzyć postęp.</p>
             <ul class="check-list">
-              <li>zebranie potrzeb i punktów bólu</li>
-              <li>ustalenie priorytetów wdrożenia</li>
-              <li>logika backlogu i decyzji</li>
+              <li>zakres pytań biznesowych</li>
+              <li>definicje KPI i wyjątków</li>
+              <li>priorytety widoczne dla właściciela</li>
             </ul>
           </article>
 
           <article class="process-card">
-            <h3>Dane i architektura rozwiązania</h3>
-            <p>Projektujemy KPI, model informacji i techniczną strukturę środowiska pod docelowy sposób pracy.</p>
+            <h3>Skąd bierzemy dane?</h3>
+            <p>Porządkujemy źródła, logikę ich łączenia i sposób odświeżania, żeby raport był spójny.</p>
             <ul class="check-list">
-              <li>mapa danych i punktów decyzyjnych</li>
-              <li>układ dashboardów i raportów</li>
-              <li>plan integracji i wdrożenia</li>
+              <li>źródła sprzedażowe, operacyjne i finansowe</li>
+              <li>mapowanie pól i zależności</li>
+              <li>przygotowanie danych pod Looker</li>
             </ul>
           </article>
 
           <article class="process-card">
-            <h3>Uruchomienie i utrzymanie</h3>
-            <p>Spinamy automatyzacje, integracje i rytm delivery tak, aby rozwiązanie działało w codziennej operacji.</p>
+            <h3>Jak zespół z tego korzysta?</h3>
+            <p>Projektujemy końcowy widok tak, by każda osoba wiedziała, gdzie spojrzeć i co z liczbami zrobić.</p>
             <ul class="check-list">
-              <li>alerty i monitoring</li>
-              <li>powtarzalny standard obsługi</li>
-              <li>rozwój i optymalizacja po wdrożeniu</li>
+              <li>czytelny układ dashboardu</li>
+              <li>logiczna nawigacja i widoki</li>
+              <li>gotowość do codziennej pracy</li>
             </ul>
           </article>
         </div>
@@ -216,26 +488,26 @@
 
       <section class="section insights-section">
         <div class="insight-card quote-card">
-          <span class="eyebrow">Podejście</span>
-          <h2>Najpierw porządek, potem skala.</h2>
+          <span class="eyebrow">Motto RDC</span>
+          <h2>Analytics as a Service.</h2>
           <p>
-            RDC nie sprzedaje przypadkowego zestawu narzędzi. Najpierw porządkujemy logikę działania,
-            a dopiero potem dobieramy dashboardy, integracje i automatyzacje.
+            Porządkujemy dane, łączymy źródła informacji i zamieniamy je w raporty, które wspierają realne decyzje.
+            Bez zbędnego szumu i bez technologii wystawionej na pokaz.
           </p>
         </div>
 
         <div class="insight-card metrics-card">
           <div class="metric">
-            <strong>Porządek</strong>
-            <span>jasny model wdrożenia i odpowiedzialności</span>
+            <strong>Spójność</strong>
+            <span>jedna logika danych i wskaźników dla całej firmy</span>
           </div>
           <div class="metric">
-            <strong>Precyzja</strong>
-            <span>decyzje oparte o KPI i logiczny model danych</span>
+            <strong>Czytelność</strong>
+            <span>raporty, które da się zrozumieć bez dodatkowego tłumacza</span>
           </div>
           <div class="metric">
-            <strong>Sprawczość</strong>
-            <span>integracje i automatyzacje wspierające realne działanie</span>
+            <strong>Gotowość</strong>
+            <span>dashboard gotowy do codziennej pracy w Lookerze</span>
           </div>
         </div>
       </section>
@@ -244,10 +516,10 @@
         <div class="contact-card">
           <div class="contact-copy">
             <span class="eyebrow">Kontakt</span>
-            <h2>Zbudujmy wdrożenie wokół danych, procesów i automatyzacji.</h2>
+            <h2>Zbudujmy raportowanie, z którego naprawdę będziecie korzystać.</h2>
             <p>
-              Jeśli chcesz uporządkować analitykę, procesy operacyjne lub sposób działania zespołu,
-              RDC może przygotować model, wdrożenie i techniczne uporządkowanie środowiska.
+              Jeśli chcesz uporządkować źródła danych, ustalić KPI i przygotować gotowe raporty w Lookerze,
+              RDC może ułożyć ten proces od strony biznesowej, danych i finalnego widoku raportowego.
             </p>
           </div>
 
@@ -262,7 +534,7 @@
 
     <footer class="footer">
       <img src="assets/rdc-analitics-logo-mark.png" alt="RDC sygnet">
-      <p>RDC-Analitics. Analityka, procesy i automatyzacja dla firm.</p>
+      <p>RDC-Analitics. Analytics as a Service.</p>
       <small>&copy; <span id="year"></span> RDC</small>
     </footer>
   </div>
