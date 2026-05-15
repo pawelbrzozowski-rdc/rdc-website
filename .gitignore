@@ -1,0 +1,15 @@
+# Local preview renders
+wide-preview*.png
+mobile-preview*.png
+journey-preview*.png
+
+# Local OS / editor files
+Thumbs.db
+Desktop.ini
+.DS_Store
+.vscode/
+.idea/
+
+# Python cache
+__pycache__/
+*.pyc
