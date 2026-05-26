@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>RDC | Dane, analityka i raporty dla firm</title>
-  <meta name="description" content="RDC porządkuje dane w małej firmie i pokazuje je w jednym, czytelnym panelu. Sprzedaż, koszty, płatności i wynik w jednym miejscu.">
+  <meta name="description" content="RDC łączy dane sprzedaży, kosztów, płatności i wyniku w jeden czytelny panel właściciela dla małej firmy.">
   <link rel="stylesheet" href="assets/styles.css">
 </head>
-<body>
+<body data-page="home" data-asset-prefix="">
   <div class="page-shell">
     <header class="topbar">
       <a class="brand" href="#start" aria-label="RDC">
@@ -16,18 +16,19 @@
         </span>
         <span class="brand-copy">
           <strong>RDC</strong>
-          <small>analytics as a service</small>
+          <small data-company-claim></small>
         </span>
       </a>
 
-      <nav class="nav">
-        <a href="#co-widzisz">Co widzisz</a>
-        <a href="#jak-to-wyglada">Jak to wygląda</a>
+      <nav class="nav" aria-label="Nawigacja główna">
+        <a href="#start">Start</a>
+        <a href="#z-chaosu-do-porzadku">Z chaosu do porządku</a>
+        <a href="#panel-wlasciciela">Panel właściciela</a>
         <a href="#dla-kogo">Dla kogo</a>
         <a href="#kontakt">Kontakt</a>
       </nav>
 
-      <a class="button ghost desktop-only" href="mailto:pawel.brzozowski@rdc-analitics.com">Umów rozmowę</a>
+      <a class="button ghost desktop-only" data-company-email data-keep-label="true" href="#">Umów rozmowę</a>
     </header>
 
     <main>
@@ -36,89 +37,192 @@
           <div class="hero-intro-grid">
             <div class="hero-copy">
               <span class="eyebrow">Analytics as a Service</span>
-              <h1>Jedno spojrzenie i wiesz, jak idzie firma.</h1>
+              <h1>Wiesz, co dzieje się w firmie — bez przekopywania się przez pliki</h1>
               <p class="hero-lead">
-                Porządkujemy dane z codziennej pracy i pokazujemy je w jednym, czytelnym panelu. Właściciel od razu widzi sprzedaż, koszty, płatności i końcowy wynik.
+                Łączymy dane z codziennej pracy w jeden czytelny panel. Pokazuje on sprzedaż,
+                koszty, płatności i wynik, żeby łatwiej podejmować decyzje.
               </p>
 
               <div class="hero-actions">
-                <a class="button" href="#co-widzisz">Zobacz efekt</a>
+                <a class="button" href="#panel-wlasciciela">Zobacz panel</a>
                 <a class="button secondary" href="#kontakt">Umów rozmowę</a>
               </div>
             </div>
 
-            <aside class="hero-inline-summary" id="co-widzisz" aria-label="Co widzisz">
-              <article class="hero-inline-point">
-                <span class="icon-bubble icon-cyan">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18h3V9H4zm6 0h3V5h-3zm6 0h4V12h-4z"/></svg>
-                </span>
-                <div>
-                  <strong>Sprzedaż i zlecenia</strong>
-                  <p>Widzisz, co realnie wpada do firmy.</p>
-                </div>
-              </article>
+            <aside class="hero-area-panel" aria-labelledby="obszary-panelu">
+              <div class="hero-area-heading">
+                <span class="eyebrow">Najważniejsze obszary</span>
+                <h2 id="obszary-panelu">Najważniejsze obszary firmy w jednym miejscu</h2>
+              </div>
 
-              <article class="hero-inline-point">
-                <span class="icon-bubble icon-blue">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 3 6v6c0 5 3.8 9.7 9 10 5.2-.3 9-5 9-10V6zm1 14h-2v-2h2zm0-4h-2V7h2z"/></svg>
-                </span>
-                <div>
-                  <strong>Koszty i marża</strong>
-                  <p>Od razu wiadomo, gdzie uciekają pieniądze.</p>
-                </div>
-              </article>
+              <div class="hero-area-list">
+                <article class="hero-area-card">
+                  <span class="icon-bubble icon-cyan">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M4 18h3V9H4z"></path>
+                      <path d="M10 18h3V5h-3z"></path>
+                      <path d="M16 18h4v-7h-4z"></path>
+                    </svg>
+                  </span>
+                  <div>
+                    <strong>Sprzedaż i zlecenia</strong>
+                    <p>Widzisz, ile firma sprzedaje.</p>
+                  </div>
+                </article>
 
-              <article class="hero-inline-point">
-                <span class="icon-bubble icon-ice">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v15H6zm8 1.5V8h3.5"/><path d="M8 11h8M8 15h8M8 19h5"/></svg>
-                </span>
-                <div>
-                  <strong>Płatności i faktury</strong>
-                  <p>Masz porządek zamiast szukania po kilku miejscach.</p>
-                </div>
-              </article>
+                <article class="hero-area-card">
+                  <span class="icon-bubble icon-blue">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M12 2 3 6v6c0 5 3.8 9.7 9 10 5.2-.3 9-5 9-10V6z"></path>
+                      <path d="M12 7v5"></path>
+                      <path d="M12 16h.01"></path>
+                    </svg>
+                  </span>
+                  <div>
+                    <strong>Koszty i marża</strong>
+                    <p>Wiesz, na czym zarabiasz, a gdzie tracisz.</p>
+                  </div>
+                </article>
 
-              <article class="hero-inline-point">
-                <span class="icon-bubble icon-navy">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 7v5c0 4.4 3.1 8.5 8 9 4.9-.5 8-4.6 8-9V7zm-1 13-4-4 1.4-1.4 2.6 2.6 5.6-5.6L18 9z"/></svg>
-                </span>
-                <div>
-                  <strong>Końcowy wynik</strong>
-                  <p>Na koniec wiesz, ile firma naprawdę zostawia.</p>
-                </div>
-              </article>
+                <article class="hero-area-card">
+                  <span class="icon-bubble icon-ice">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M6 3h9l3 3v15H6z"></path>
+                      <path d="M15 3v4h4"></path>
+                      <path d="M8 11h8"></path>
+                      <path d="M8 15h8"></path>
+                      <path d="M8 19h5"></path>
+                    </svg>
+                  </span>
+                  <div>
+                    <strong>Płatności i faktury</strong>
+                    <p>Masz wszystko pod kontrolą w jednym miejscu.</p>
+                  </div>
+                </article>
+
+                <article class="hero-area-card">
+                  <span class="icon-bubble icon-navy">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M12 3 4 7v5c0 4.4 3.1 8.5 8 9 4.9-.5 8-4.6 8-9V7z"></path>
+                      <path d="m8 12 2.8 2.8L16 9.6"></path>
+                    </svg>
+                  </span>
+                  <div>
+                    <strong>Wynik firmy</strong>
+                    <p>Widzisz, ile naprawdę zostaje po kosztach.</p>
+                  </div>
+                </article>
+              </div>
             </aside>
           </div>
         </article>
+      </section>
+
+      <section class="journey-section" id="z-chaosu-do-porzadku">
+        <div class="section-heading">
+          <span class="eyebrow">Z chaosu do porządku</span>
+          <h2>Z chaosu do porządku</h2>
+          <p>
+            Rozproszone dane zbieramy w jeden czytelny panel. Dzięki temu właściciel firmy szybciej
+            widzi, co się dzieje, gdzie są problemy i jakie decyzje trzeba podjąć.
+          </p>
+        </div>
+
+        <div class="journey-grid">
+          <article class="journey-card before-card">
+            <span class="card-label">Przed</span>
+            <h3>Dużo miejsc, mało jasności</h3>
+            <p class="journey-copy">Dane są porozrzucane po kilku systemach, plikach i raportach.</p>
+
+            <div class="journey-points-grid">
+              <article class="journey-point-card">
+                <strong>5+ miejsc do sprawdzania</strong>
+                <p>Excel, faktury, sklep, marketplace, koszty, płatności.</p>
+              </article>
+              <article class="journey-point-card">
+                <strong>Ciągłe przełączanie się</strong>
+                <p>Każde źródło pokazuje tylko fragment sytuacji.</p>
+              </article>
+              <article class="journey-point-card">
+                <strong>Łatwo coś przeoczyć</strong>
+                <p>Sprzedaż jest w jednym miejscu, faktury w drugim, koszty jeszcze gdzie indziej.</p>
+              </article>
+              <article class="journey-point-card">
+                <strong>Ręczne składanie obrazu firmy</strong>
+                <p>Każdy dzień zaczyna się od szukania odpowiedzi i łączenia danych na własną rękę.</p>
+              </article>
+            </div>
+
+            <p class="journey-summary">
+              Właściciel traci czas na sprawdzanie kilku miejsc, zamiast od razu widzieć, jak naprawdę idzie firma.
+            </p>
+          </article>
+
+          <article class="journey-card after-card">
+            <span class="card-label">Po</span>
+            <h3>Jeden panel, szybsza decyzja</h3>
+            <p class="journey-copy">Najważniejsze informacje są zebrane w jednym miejscu.</p>
+
+            <div class="journey-points-grid">
+              <article class="journey-point-card">
+                <strong>1 ekran do codziennego sprawdzenia</strong>
+                <p>Sprzedaż, koszty, płatności i wynik firmy w jednym widoku.</p>
+              </article>
+              <article class="journey-point-card">
+                <strong>Mniej klikania</strong>
+                <p>Nie trzeba szukać danych po kilku plikach i systemach.</p>
+              </article>
+              <article class="journey-point-card">
+                <strong>Szybciej widać problem albo trend</strong>
+                <p>Od razu wiadomo, czy coś wymaga reakcji.</p>
+              </article>
+              <article class="journey-point-card">
+                <strong>Lepsza kontrola nad firmą</strong>
+                <p>Jedno otwarcie panelu wystarczy, żeby zobaczyć, co się dzieje i czy trzeba działać już dziś.</p>
+              </article>
+            </div>
+
+            <p class="journey-summary">
+              Zamiast codziennie składać obraz firmy z kilku miejsc, widzisz wszystko w jednym panelu.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="dashboard-section" id="panel-wlasciciela">
+        <div class="section-heading">
+          <span class="eyebrow">Panel właściciela</span>
+          <h2>Cała firma na jednej stronie</h2>
+          <p>
+            Jeden ekran do codziennego sprawdzenia firmy. Sprzedaż, koszty, płatności i wynik
+            w jednym miejscu — bez szukania po plikach, narzędziach i wiadomościach.
+          </p>
+        </div>
 
         <article class="dashboard-panel">
-          <div class="dashboard-header">
-            <div>
-              <span class="panel-tag">Panel właściciela</span>
-              <h2>Cała firma na jednej stronie</h2>
-            </div>
-            <span class="panel-state">gotowe do użycia</span>
-          </div>
-
-          <div class="dashboard-strip">
+          <div class="dashboard-strip dashboard-strip-wide">
             <article class="status-card">
               <strong>Sprzedaż rośnie</strong>
-              <small>widać tempo miesiąca</small>
+              <small>Widać tempo miesiąca i to, co realnie wpada do firmy.</small>
             </article>
             <article class="status-card">
               <strong>Koszty pod kontrolą</strong>
-              <small>łatwiej wychwycić problem</small>
+              <small>Łatwiej zauważyć, gdzie pojawia się problem.</small>
             </article>
             <article class="status-card">
               <strong>Płatności uporządkowane</strong>
-              <small>nic nie ginie po drodze</small>
+              <small>Wiadomo, co jest opłacone, a co wymaga sprawdzenia.</small>
+            </article>
+            <article class="status-card">
+              <strong>Gotowe do użycia</strong>
+              <small>Panel pokazuje najważniejsze informacje w prosty i czytelny sposób.</small>
             </article>
           </div>
 
           <div class="chart-card">
             <div class="chart-legend">
               <strong>Jeden ekran do codziennego sprawdzenia firmy</strong>
-              <small>czytelny obraz sytuacji zamiast rozproszonych danych</small>
+              <small>Sprzedaż, koszty, płatności i wynik w jednym widoku.</small>
             </div>
 
             <svg class="hero-chart" viewBox="0 0 640 320" role="img" aria-label="Przykładowy wykres trendu firmy">
@@ -161,185 +265,58 @@
               </g>
             </svg>
           </div>
-
-          <div class="dashboard-note-grid">
-            <article class="dashboard-note-card">
-              <strong>Sprzedaż, koszty i płatności w jednym miejscu</strong>
-              <p>Nie trzeba już składać obrazu firmy z kilku narzędzi, plików i wiadomości.</p>
-            </article>
-            <article class="dashboard-note-card">
-              <strong>Właściciel widzi od razu, co wymaga reakcji</strong>
-              <p>Zamiast przeglądać tabelki, dostaje prosty i czytelny obraz sytuacji.</p>
-            </article>
-          </div>
         </article>
-      </section>
-
-      <section class="journey-section" id="jak-to-wyglada">
-        <div class="section-heading">
-          <span class="eyebrow">Jak to wygląda</span>
-          <h2>Z chaosu do jednego czytelnego panelu.</h2>
-          <p>
-            Zbieramy rozproszone dane i układamy je tak, żeby właściciel firmy
-            szybciej rozumiał sytuację i łatwiej podejmował decyzje.
-          </p>
-        </div>
-
-        <div class="journey-grid">
-          <article class="journey-card before-card">
-            <span class="card-label">Przed</span>
-            <h3>Dużo miejsc, mało jasności</h3>
-            <div class="journey-meta">
-              <span class="journey-badge journey-badge-warn">5+ miejsc</span>
-              <span class="journey-badge">ciągłe przełączanie</span>
-            </div>
-            <div class="journey-visual journey-chaos">
-              <article class="chaos-panel chaos-panel-a">
-                <strong>Excel</strong>
-                <small>sprzedaż tygodnia</small>
-              </article>
-              <article class="chaos-panel chaos-panel-b">
-                <strong>Faktury</strong>
-                <small>co opłacone</small>
-              </article>
-              <article class="chaos-panel chaos-panel-c">
-                <strong>Sklep / Marketplace</strong>
-                <small>osobne źródła danych</small>
-              </article>
-              <article class="chaos-panel chaos-panel-d">
-                <strong>Koszty</strong>
-                <small>inne miejsce, inny widok</small>
-              </article>
-            </div>
-            <div class="journey-points">
-              <span>szukanie odpowiedzi w kilku miejscach</span>
-              <span>łatwo coś przeoczyć</span>
-              <span>każdy dzień zaczyna się od składania obrazu firmy</span>
-            </div>
-            <p>Właściciel szuka odpowiedzi w kilku miejscach i codziennie składa obraz firmy ręcznie.</p>
-          </article>
-
-          <article class="journey-card after-card">
-            <span class="card-label">Po</span>
-            <h3>Jeden panel, jedna decyzja szybciej</h3>
-            <div class="journey-meta">
-              <span class="journey-badge journey-badge-good">1 ekran</span>
-              <span class="journey-badge">jedno codzienne sprawdzenie</span>
-            </div>
-            <div class="journey-visual journey-clean">
-              <div class="clean-top"></div>
-              <div class="clean-grid">
-                <span></span><span></span><span></span>
-                <span></span><span></span><span></span>
-              </div>
-              <div class="clean-line"></div>
-              <div class="clean-footer">
-                <span>sprzedaż</span>
-                <span>koszty</span>
-                <span>wynik</span>
-              </div>
-            </div>
-            <div class="journey-points journey-points-good">
-              <span>jedno miejsce do porannego sprawdzenia firmy</span>
-              <span>prościej zauważyć problem albo trend</span>
-              <span>mniej klikania, szybsze decyzje</span>
-            </div>
-            <p>Jedno otwarcie i wiadomo, co dzieje się w firmie oraz czy coś wymaga reakcji już dziś.</p>
-          </article>
-        </div>
       </section>
 
       <section class="audience-section" id="dla-kogo">
         <div class="section-heading compact-heading">
-          <span class="eyebrow">Dla kogo</span>
-          <h2>Dla właściciela małej firmy, który chce rozumieć liczby bez wchodzenia w technikalia.</h2>
+          <span class="eyebrow">Dla kogo?</span>
+          <h2>Dla kogo?</h2>
+          <p>
+            Dla właściciela małej firmy, który chce rozumieć swoje liczby bez wchodzenia w techniczne szczegóły.
+          </p>
         </div>
 
-        <div class="persona-grid">
-          <article class="persona-card">
-            <div class="persona-visual">
-              <div class="persona-screen service-screen" aria-hidden="true">
-                <div class="screen-row"></div>
-                <div class="screen-bars"><span></span><span></span><span></span></div>
-              </div>
-            </div>
-            <div class="persona-copy">
-              <span class="eyebrow">Mała firma usługowa</span>
-              <h3>Zlecenia, płatności i końcowy wynik.</h3>
-              <p>Dobry kierunek, jeśli dziś sprawdzasz zlecenia, faktury i koszty osobno, a chcesz mieć to spięte w jedną całość.</p>
-            </div>
-          </article>
-
-          <article class="persona-card">
-            <div class="persona-visual">
-              <div class="persona-screen trade-screen" aria-hidden="true">
-                <div class="screen-row"></div>
-                <div class="screen-columns"><span></span><span></span><span></span><span></span></div>
-              </div>
-            </div>
-            <div class="persona-copy">
-              <span class="eyebrow">Mała firma handlowa</span>
-              <h3>Sprzedaż, kanały, koszty i marża w jednym widoku.</h3>
-              <p>Dobry kierunek, jeśli dziś składasz obraz firmy z kilku systemów i chcesz szybciej wiedzieć, co naprawdę działa.</p>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="delivery-section">
-        <div class="section-heading compact-heading">
-          <span class="eyebrow">Co dostajesz</span>
-          <h2>Prosty proces i gotowy efekt końcowy.</h2>
-        </div>
-
-        <div class="delivery-grid">
-          <article class="delivery-card">
-            <span class="step-pill">1</span>
-            <h3>Łączymy dane</h3>
-            <p>Zbieramy to, co dziś jest porozrzucane po plikach, systemach i narzędziach.</p>
-          </article>
-
-          <article class="delivery-card">
-            <span class="step-pill">2</span>
-            <h3>Układamy czytelny panel</h3>
-            <p>Pokazujemy tylko to, co naprawdę pomaga zarządzać firmą na co dzień.</p>
-          </article>
-
-          <article class="delivery-card">
-            <span class="step-pill">3</span>
-            <h3>Masz gotowy obraz sytuacji</h3>
-            <p>Właściciel otwiera jeden ekran i od razu wie, czy wszystko idzie dobrze.</p>
-          </article>
-        </div>
+        <div class="realization-grid" data-demo-grid></div>
       </section>
 
       <section class="contact-section" id="kontakt">
         <article class="contact-card">
           <div class="contact-copy">
             <span class="eyebrow">Kontakt</span>
-            <h2>Chcesz zobaczyć, jak taki panel może wyglądać w Twojej firmie?</h2>
+            <h2>Chcesz zobaczyć, jak taki panel mógłby wyglądać w Twojej firmie?</h2>
             <p>
-              Pokażemy Ci prosty kierunek: jakie dane warto połączyć, co pokazać
-              na jednym ekranie i jak przełożyć to na szybsze decyzje.
+              Umów krótką rozmowę. Pokażemy Ci, jakie dane warto połączyć i jak przełożyć je
+              na prosty, czytelny panel właściciela.
             </p>
           </div>
 
           <div class="contact-meta">
-            <a href="mailto:pawel.brzozowski@rdc-analitics.com">pawel.brzozowski@rdc-analitics.com</a>
-            <a href="tel:+48735496692">+48 735 496 692</a>
-            <span>RDC-Analitics</span>
+            <a data-company-email href="#"></a>
+            <a data-company-phone href="#"></a>
+            <span data-company-claim></span>
           </div>
         </article>
       </section>
     </main>
 
     <footer class="footer">
-      <img src="assets/rdc-analitics-logo-mark.png" alt="RDC sygnet">
-      <p>RDC-Analitics. Dane, analityka i raporty dla firm.</p>
-      <small>&copy; <span id="year"></span> RDC</small>
+      <div class="footer-brand">
+        <img src="assets/rdc-analitics-logo-mark.png" alt="RDC sygnet">
+        <div>
+          <strong>RDC-Analitics</strong>
+          <small data-company-claim></small>
+        </div>
+      </div>
+      <div class="footer-contact">
+        <a data-company-email href="#"></a>
+        <a data-company-phone href="#"></a>
+      </div>
+      <small>&copy; <span id="year"></span> RDC-Analitics</small>
     </footer>
   </div>
 
+  <script src="assets/site-data.js"></script>
   <script src="assets/app.js"></script>
 </body>
 </html>
