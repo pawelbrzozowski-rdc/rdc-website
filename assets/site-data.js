@@ -4,8 +4,8 @@ window.RDCSiteData = Object.freeze({
     shortName: "RDC",
     claim: "Analytics as a Service",
     email: "pawel.brzozowski@rdc-analitics.com",
-    phone: "+48 735 496 692",
-    phoneHref: "+48735496692",
+    phone: "+48 455 562 643",
+    phoneHref: "+48455562643",
   },
   home: {
     intro: {
@@ -135,7 +135,7 @@ window.RDCSiteData = Object.freeze({
       order: 1,
       icon: "project",
       tone: "cyan",
-      demoUrl: null,
+      demoUrl: "https://datastudio.google.com/s/j5GYyfFN-ZE",
       publicName: "Firmy projektowo-montażowe",
       shortTitle: "Czy projekty dowożą plan?",
       dlaJakiejFirmy:
