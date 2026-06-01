@@ -569,10 +569,36 @@ svg {
 .realization-card,
 .demo-info-card,
 .demo-pages-card,
-.demo-cta-card {
+.demo-cta-card,
+.process-step-card {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(244, 250, 254, 0.94));
   border: 1px solid rgba(255, 255, 255, 0.94);
   box-shadow: var(--shadow-soft);
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.process-step-card {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  min-height: 246px;
+  padding: 22px;
+  border-radius: var(--radius-lg);
+}
+
+.process-step-card strong {
+  display: block;
+  color: var(--navy-950);
+  font-size: 1.14rem;
+}
+
+.process-step-card p {
+  font-size: 0.98rem;
 }
 
 .journey-card {
@@ -746,7 +772,7 @@ svg {
 }
 
 .realization-link::after {
-  content: "→";
+  content: "->";
 }
 
 .contact-card {
@@ -855,7 +881,7 @@ svg {
 }
 
 .back-link::before {
-  content: "←";
+  content: "<-";
 }
 
 .demo-hero {
@@ -1164,7 +1190,8 @@ svg {
   }
 
   .journey-grid,
-  .demo-info-grid {
+  .demo-info-grid,
+  .process-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1219,7 +1246,8 @@ svg {
   .dashboard-strip,
   .dashboard-strip-wide,
   .question-grid,
-  .journey-points-grid {
+  .journey-points-grid,
+  .process-grid {
     grid-template-columns: 1fr;
   }
 

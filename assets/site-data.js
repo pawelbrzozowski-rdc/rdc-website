@@ -1,132 +1,135 @@
 window.RDCSiteData = Object.freeze({
+  site: {
+    baseUrl: "https://rdc-analitics.com",
+    locale: "pl_PL",
+    defaultImage: "https://rdc-analitics.com/assets/rdc-analitics-logo-lockup.png",
+    logo: "https://rdc-analitics.com/assets/rdc-analitics-logo-mark.png",
+  },
   company: {
     name: "RDC-Analitics",
     shortName: "RDC",
-    claim: "Analytics as a Service",
+    claim: "Inwentaryzacja danych i analiza procesu",
     email: "pawel.brzozowski@rdc-analitics.com",
     phone: "+48 455 562 643",
     phoneHref: "+48455562643",
+    area: "Rzeszów i Podkarpacie",
   },
   home: {
-    intro: {
-      eyebrow: "Analytics as a Service",
-      heading: "Wiesz, co dzieje się w firmie — bez przekopywania się przez pliki",
-      text: "Łączymy dane z codziennej pracy w jeden czytelny panel. Pokazuje on sprzedaż, koszty, płatności i wynik, żeby łatwiej podejmować decyzje.",
+    seo: {
+      title: "RDC-Analitics | Inwentaryzacja danych i analiza procesu Rzeszów",
+      description:
+        "RDC-Analitics pomaga małym firmom z Rzeszowa i Podkarpacia uporządkować dane, znaleźć miejsca utraty marży i przygotować prosty plan działań.",
+      keywords:
+        "inwentaryzacja danych Rzeszów, analiza procesu Podkarpacie, analiza danych dla firm, dashboard dla właściciela, raporty dla małej firmy",
+      canonicalPath: "/",
     },
-    panelAreas: {
-      title: "Najważniejsze obszary firmy w jednym miejscu",
+    intro: {
+      eyebrow: "Inwentaryzacja danych i analiza procesu",
+      heading: "Pokażemy, gdzie firma zarabia, gdzie traci i co uporządkować najpierw",
+      text:
+        "Pomagamy małym firmom z Rzeszowa i Podkarpacia ogarnąć dane ze sprzedaży, kosztów, płatności i zleceń. Najpierw sprawdzamy, gdzie są liczby i czego brakuje. Dopiero potem budujemy prosty panel albo rekomendujemy lekkie wdrożenie.",
+      primaryCta: "Umów krótką rozmowę",
+      secondaryCta: "Zobacz przykłady",
+    },
+    checkedAreas: {
+      eyebrow: "Co sprawdzamy",
+      title: "Najpierw liczby, potem narzędzia",
       items: [
         {
           icon: "sales",
           title: "Sprzedaż i zlecenia",
-          text: "Widzisz, ile firma sprzedaje.",
+          text: "Czy wiadomo, co realnie wpada do firmy i z czego powstaje wynik?",
         },
         {
           icon: "margin",
           title: "Koszty i marża",
-          text: "Wiesz, na czym zarabiasz, a gdzie tracisz.",
+          text: "Czy da się zobaczyć, gdzie obrót nie zamienia się w zysk?",
         },
         {
           icon: "invoice",
-          title: "Płatności i faktury",
-          text: "Masz wszystko pod kontrolą w jednym miejscu.",
+          title: "Płatności i gotówka",
+          text: "Czy widać, co jest opłacone, co zalega i co blokuje płynność?",
         },
         {
           icon: "result",
-          title: "Wynik firmy",
-          text: "Widzisz, ile naprawdę zostaje po kosztach.",
+          title: "Proces i odpowiedzialność",
+          text: "Czy wiadomo, kto ma dane, kiedy powstają i gdzie robi się ręczna robota?",
         },
       ],
     },
-    journey: {
-      eyebrow: "Z chaosu do porządku",
-      heading: "Z chaosu do porządku",
+    process: {
+      eyebrow: "Jak pomagamy",
+      heading: "Bez wielkiego systemu na start. Najpierw spokojna analiza.",
       description:
-        "Rozproszone dane zbieramy w jeden czytelny panel. Dzięki temu właściciel firmy szybciej widzi, co się dzieje, gdzie są problemy i jakie decyzje trzeba podjąć.",
-      before: {
-        label: "Przed",
-        title: "Dużo miejsc, mało jasności",
-        description: "Dane są porozrzucane po kilku systemach, plikach i raportach.",
-        points: [
-          {
-            title: "5+ miejsc do sprawdzania",
-            text: "Excel, faktury, sklep, marketplace, koszty, płatności.",
-          },
-          {
-            title: "Ciągłe przełączanie się",
-            text: "Każde źródło pokazuje tylko fragment sytuacji.",
-          },
-          {
-            title: "Łatwo coś przeoczyć",
-            text: "Sprzedaż jest w jednym miejscu, faktury w drugim, koszty jeszcze gdzie indziej.",
-          },
-          {
-            title: "Ręczne składanie obrazu firmy",
-            text: "Każdy dzień zaczyna się od szukania odpowiedzi i łączenia danych na własną rękę.",
-          },
-        ],
-        summary:
-          "Właściciel traci czas na sprawdzanie kilku miejsc, zamiast od razu widzieć, jak naprawdę idzie firma.",
-      },
-      after: {
-        label: "Po",
-        title: "Jeden panel, szybsza decyzja",
-        description: "Najważniejsze informacje są zebrane w jednym miejscu.",
-        points: [
-          {
-            title: "1 ekran do codziennego sprawdzenia",
-            text: "Sprzedaż, koszty, płatności i wynik firmy w jednym widoku.",
-          },
-          {
-            title: "Mniej klikania",
-            text: "Nie trzeba szukać danych po kilku plikach i systemach.",
-          },
-          {
-            title: "Szybciej widać problem albo trend",
-            text: "Od razu wiadomo, czy coś wymaga reakcji.",
-          },
-          {
-            title: "Lepsza kontrola nad firmą",
-            text: "Jedno otwarcie panelu wystarczy, żeby zobaczyć, co się dzieje i czy trzeba działać już dziś.",
-          },
-        ],
-        summary:
-          "Zamiast codziennie składać obraz firmy z kilku miejsc, widzisz wszystko w jednym panelu.",
-      },
+        "Nie zaczynamy od wdrażania ERP ani od dokładania kolejnego narzędzia. Najpierw robimy porządek w tym, co już masz, i pokazujemy, które działania mają największy sens.",
+      steps: [
+        {
+          title: "1 rozmowa",
+          text: "Ustalamy, jak działa firma: sprzedaż, realizacja, faktury, płatności, magazyn albo zlecenia.",
+        },
+        {
+          title: "Inwentaryzacja danych",
+          text: "Sprawdzamy pliki, systemy, raporty i miejsca, w których dziś powstają ważne liczby.",
+        },
+        {
+          title: "Analiza luk",
+          text: "Pokazujemy, czego brakuje, co jest liczone ręcznie i gdzie przez dane trudno podjąć decyzję.",
+        },
+        {
+          title: "Plan działań",
+          text: "Dostajesz prostą listę: co uporządkować najpierw, co może poczekać i czego nie warto komplikować.",
+        },
+        {
+          title: "Panel albo lekkie wdrożenie",
+          text: "Jeśli ma to sens, budujemy czytelny dashboard albo pomagamy dobrać prostszy układ pracy.",
+        },
+      ],
     },
     ownerPanel: {
-      eyebrow: "Panel właściciela",
-      heading: "Cała firma na jednej stronie",
+      eyebrow: "Efekt analizy",
+      heading: "Panel właściciela jest efektem, nie punktem startu",
       description:
-        "Jeden ekran do codziennego sprawdzenia firmy. Sprzedaż, koszty, płatności i wynik w jednym miejscu — bez szukania po plikach, narzędziach i wiadomościach.",
+        "Po analizie można zbudować jeden prosty widok, który pokazuje wynik firmy bez grzebania po plikach. Ma odpowiadać na pytania właściciela, a nie robić wrażenie liczbami.",
       items: [
         {
-          title: "Sprzedaż rośnie",
-          text: "Widać tempo miesiąca i to, co realnie wpada do firmy.",
+          title: "Widzisz, co wpada",
+          text: "Sprzedaż, zlecenia i faktury w jednym rytmie.",
         },
         {
-          title: "Koszty pod kontrolą",
-          text: "Łatwiej zauważyć, gdzie pojawia się problem.",
+          title: "Widzisz, gdzie ucieka marża",
+          text: "Koszty, rabaty, projekty albo kategorie, które zjadają wynik.",
         },
         {
-          title: "Płatności uporządkowane",
-          text: "Wiadomo, co jest opłacone, a co wymaga sprawdzenia.",
+          title: "Widzisz gotówkę",
+          text: "Płatności, zaległości i tematy, które trzeba dopilnować.",
         },
         {
-          title: "Gotowe do użycia",
-          text: "Panel pokazuje najważniejsze informacje w prosty i czytelny sposób.",
+          title: "Wiesz, co dziś zrobić",
+          text: "Krótka lista miejsc, w których reakcja ma największy sens.",
         },
       ],
     },
     audience: {
-      eyebrow: "Dla kogo?",
-      heading: "Dla kogo?",
-      text: "Dla właściciela małej firmy, który chce rozumieć swoje liczby bez wchodzenia w techniczne szczegóły.",
+      eyebrow: "Przykłady",
+      heading: "Dla jakich firm ma to sens?",
+      text:
+        "Najlepiej działa tam, gdzie właściciel zna firmę z praktyki, ale liczby są porozrzucane po fakturach, Excelach, systemach sprzedaży, magazynie albo zleceniach.",
     },
     contact: {
       eyebrow: "Kontakt",
-      heading: "Chcesz zobaczyć, jak taki panel mógłby wyglądać w Twojej firmie?",
-      text: "Umów krótką rozmowę. Pokażemy Ci, jakie dane warto połączyć i jak przełożyć je na prosty, czytelny panel właściciela.",
+      heading: "Chcesz sprawdzić, czy w Twoich danych widać wynik firmy?",
+      text:
+        "Umów krótką rozmowę. Bez technicznego żargonu sprawdzimy, jakie dane już masz i czy da się z nich zbudować prosty obraz sytuacji.",
+    },
+  },
+  realizations: {
+    seo: {
+      title: "RDC-Analitics | Przykłady analiz i dashboardów dla branż",
+      description:
+        "Zobacz przykładowe branże, w których RDC-Analitics pomaga uporządkować dane, policzyć marżę, płynność i procesy małej firmy.",
+      keywords:
+        "dashboard dla firmy Rzeszów, analiza marży, analiza danych małej firmy, przykłady raportów, Podkarpacie",
+      canonicalPath: "/realizacje/",
     },
   },
   demos: [
@@ -137,21 +140,27 @@ window.RDCSiteData = Object.freeze({
       tone: "cyan",
       demoUrl: "https://datastudio.google.com/s/j5GYyfFN-ZE",
       publicName: "Firmy projektowo-montażowe",
-      shortTitle: "Czy projekty dowożą plan?",
+      shortTitle: "Czy projekt naprawdę zarabia?",
+      seoTitle: "Analiza marży projektów i montaży | RDC-Analitics Rzeszów",
+      seoDescription:
+        "Analiza danych dla firm projektowo-montażowych z Rzeszowa i Podkarpacia: marża projektu, zaliczki, koszty, gotówka i lista tematów do reakcji.",
+      seoKeywords:
+        "marża projektu, firmy montażowe Rzeszów, analiza projektów, dashboard dla firmy montażowej, zaliczki i gotówka",
+      canonicalPath: "/realizacje/project-install/",
       dlaJakiejFirmy:
         "Dla firm, które sprzedają projekt jako usługę: montaż, wykonanie, realizacja, podwykonawcy, zaliczki i rozliczenie końcowe.",
       problem:
-        "Właściciel widzi przychód, ale nie widzi szybko, który projekt faktycznie dowozi marżę i gotówkę.",
+        "Właściciel widzi przychód, ale często za późno widzi, który projekt zjada marżę albo blokuje gotówkę.",
       coPokazuje:
-        "Plan projektu, marżę, odchylenia kosztowe, status gotówki i listę tematów wymagających reakcji.",
+        "Porządek w danych o projekcie: plan, koszty, zaliczki, faktury, marżę, gotówkę i tematy wymagające reakcji.",
       coDajeWlascicielowi:
-        "Jedno spojrzenie na to, gdzie projekt zaczyna zjadać wynik, zanim problem wyjdzie dopiero przy rozliczeniu.",
+        "Wcześniejszą informację, gdzie projekt zaczyna uciekać z wynikiem, zanim problem wyjdzie dopiero przy końcowym rozliczeniu.",
       pages: [
         "Czy projekty dowożą plan?",
         "Gdzie ucieka marża projektu?",
         "Co blokuje gotówkę przed końcem projektu?",
       ],
-      tags: ["projekty", "montaż", "marża", "gotówka", "zaliczki"],
+      tags: ["projekty", "montaż", "marża", "gotówka", "zaliczki", "Rzeszów"],
     },
     {
       id: "trade",
@@ -160,13 +169,19 @@ window.RDCSiteData = Object.freeze({
       tone: "blue",
       demoUrl: null,
       publicName: "Handel i dystrybucja",
-      shortTitle: "Czy obrót daje marżę?",
+      shortTitle: "Czy obrót daje wynik?",
+      seoTitle: "Analiza marży handlowej i zapasu | RDC-Analitics Podkarpacie",
+      seoDescription:
+        "Dla firm handlowych i dystrybucyjnych: analiza marży, rabatów, zapasu, należności i miejsc, gdzie obrót nie daje wyniku.",
+      seoKeywords:
+        "analiza marży handlowej, zapas magazynowy, dystrybucja Rzeszów, raport sprzedaży, working capital",
+      canonicalPath: "/realizacje/trade/",
       dlaJakiejFirmy:
         "Dla firm handlowych i dystrybucyjnych, które mają sprzedaż, magazyn, rabaty, oddziały albo przedstawicieli.",
       problem:
-        "Obrót rośnie, ale trudno zobaczyć, które kategorie, oddziały albo rabaty realnie zabierają wynik.",
+        "Obrót może rosnąć, a wynik wcale nie musi. Bez prostych danych trudno zobaczyć, które kategorie, rabaty lub oddziały zabierają marżę.",
       coPokazuje:
-        "Marże, rabaty, zapas, należności, kategorie i miejsca zamrożenia gotówki.",
+        "Marże, rabaty, zapas, należności, kategorie i miejsca, w których gotówka jest zamrożona.",
       coDajeWlascicielowi:
         "Szybką odpowiedź, gdzie sprzedaż wygląda dobrze na obrocie, ale słabo na marży lub gotówce.",
       pages: [
@@ -174,7 +189,7 @@ window.RDCSiteData = Object.freeze({
         "Gdzie obrót nie daje marży?",
         "Gdzie zamraża się gotówka?",
       ],
-      tags: ["handel", "dystrybucja", "magazyn", "marża", "rabaty"],
+      tags: ["handel", "dystrybucja", "magazyn", "marża", "rabaty", "Podkarpacie"],
     },
     {
       id: "automotive",
@@ -183,13 +198,19 @@ window.RDCSiteData = Object.freeze({
       tone: "indigo",
       demoUrl: null,
       publicName: "Motoryzacja, części i serwis",
-      shortTitle: "Na czym zarabia sprzedaż?",
+      shortTitle: "Co naprawdę zarabia?",
+      seoTitle: "Analiza sprzedaży części i serwisu | RDC-Analitics Rzeszów",
+      seoDescription:
+        "Analiza danych dla sklepów motoryzacyjnych, hurtowni części i serwisów: marża, rotacja zapasu, zlecenia i klienci do reakcji.",
+      seoKeywords:
+        "sklep motoryzacyjny Rzeszów, analiza części samochodowych, rotacja zapasu, marża serwisu, dashboard automotive",
+      canonicalPath: "/realizacje/automotive/",
       dlaJakiejFirmy:
         "Dla sklepów motoryzacyjnych, hurtowni części, serwisów i firm, które łączą sprzedaż z obsługą klienta.",
       problem:
         "Dużo indeksów, ruch na magazynie i zlecenia serwisowe utrudniają ocenę, co faktycznie zarabia.",
       coPokazuje:
-        "Marże na kategoriach, rotację zapasu, zalegające pozycje oraz klientów lub zlecenia do reakcji.",
+        "Marże na kategoriach, rotację zapasu, zalegające pozycje oraz klientów lub zlecenia wymagające reakcji.",
       coDajeWlascicielowi:
         "Lepszą kontrolę nad tym, co trzymać, co promować, a gdzie nie zamrażać pieniędzy.",
       pages: [
@@ -197,7 +218,7 @@ window.RDCSiteData = Object.freeze({
         "Co leży za długo na magazynie?",
         "Który klient lub zlecenie wymaga reakcji?",
       ],
-      tags: ["automotive", "części", "serwis", "magazyn", "rotacja"],
+      tags: ["automotive", "części", "serwis", "magazyn", "rotacja", "Rzeszów"],
     },
     {
       id: "medical",
@@ -207,6 +228,12 @@ window.RDCSiteData = Object.freeze({
       demoUrl: null,
       publicName: "Medyczne i specjalistyczne punkty sprzedaży",
       shortTitle: "Które grupy dają marżę?",
+      seoTitle: "Analiza danych dla sklepów medycznych | RDC-Analitics",
+      seoDescription:
+        "Dla sklepów medycznych i specjalistycznych punktów sprzedaży: dostępność, zapas, marża, oddziały i kategorie wymagające reakcji.",
+      seoKeywords:
+        "sklep medyczny analiza danych, marża kategorii, dostępność towaru, oddziały, Rzeszów Podkarpacie",
+      canonicalPath: "/realizacje/medical/",
       dlaJakiejFirmy:
         "Dla punktów medycznych, sklepów specjalistycznych, placówek z oddziałami albo firm z refundacjami i dostępnością asortymentu.",
       problem:
@@ -220,7 +247,7 @@ window.RDCSiteData = Object.freeze({
         "Czego brakuje i co zalega?",
         "Który oddział wymaga reakcji?",
       ],
-      tags: ["medical", "specjalistyczny handel", "dostępność", "oddziały", "marża"],
+      tags: ["medyczne", "specjalistyczny handel", "dostępność", "oddziały", "marża"],
     },
     {
       id: "cnc",
@@ -230,6 +257,12 @@ window.RDCSiteData = Object.freeze({
       demoUrl: null,
       publicName: "CNC i produkcja jednostkowa",
       shortTitle: "Które zlecenia zarabiają?",
+      seoTitle: "Analiza rentowności zleceń CNC | RDC-Analitics Podkarpacie",
+      seoDescription:
+        "Analiza danych dla firm CNC i produkcji jednostkowej: wycena kontra wykonanie, godziny, poprawki, maszyny i rentowność zleceń.",
+      seoKeywords:
+        "CNC Rzeszów, rentowność zleceń, analiza produkcji jednostkowej, wycena kontra wykonanie, obciążenie maszyn",
+      canonicalPath: "/realizacje/cnc/",
       dlaJakiejFirmy:
         "Dla firm CNC, obróbki metalu, warsztatów produkcyjnych i firm, które wyceniają zlecenia przed wykonaniem.",
       problem:
@@ -253,10 +286,16 @@ window.RDCSiteData = Object.freeze({
       demoUrl: null,
       publicName: "Produkcja i serie",
       shortTitle: "Czy produkcja dowozi plan?",
+      seoTitle: "Analiza danych produkcyjnych | RDC-Analitics Rzeszów",
+      seoDescription:
+        "Analiza danych dla małych firm produkcyjnych: plan, marża zleceń i serii, jakość, odpady, opóźnienia i wynik operacyjny.",
+      seoKeywords:
+        "analiza produkcji, dashboard produkcyjny, odpady produkcyjne, marża zleceń, Rzeszów",
+      canonicalPath: "/realizacje/production/",
       dlaJakiejFirmy:
         "Dla małych i średnich firm produkcyjnych, które potrzebują widzieć plan, marżę, jakość, odpady i opóźnienia.",
       problem:
-        "Produkcja generuje wynik, ale rozjazdy planu, odpady i opóźnienia są widoczne za późno.",
+        "Produkcja generuje wynik, ale rozjazdy planu, odpady i opóźnienia często są widoczne za późno.",
       coPokazuje:
         "Plan produkcji, marże na zleceniach lub seriach, jakość, odpady i opóźnienia.",
       coDajeWlascicielowi:
@@ -276,6 +315,12 @@ window.RDCSiteData = Object.freeze({
       demoUrl: null,
       publicName: "Flota, trasy i zasoby mobilne",
       shortTitle: "Czy flota dowozi wynik?",
+      seoTitle: "Analiza rentowności floty i tras | RDC-Analitics",
+      seoDescription:
+        "Dla firm z flotą i trasami: analiza paliwa, serwisu, wykorzystania pojazdów, czasu i realnej rentowności tras.",
+      seoKeywords:
+        "analiza floty, rentowność tras, koszty paliwa, serwis pojazdów, Podkarpacie",
+      canonicalPath: "/realizacje/fleet/",
       dlaJakiejFirmy:
         "Dla firm z flotą, trasami, pojazdami, serwisem terenowym albo zasobami mobilnymi.",
       problem:
@@ -298,7 +343,13 @@ window.RDCSiteData = Object.freeze({
       tone: "green",
       demoUrl: null,
       publicName: "Serwis, kontrakty i ekipy",
-      shortTitle: "Czy kontrakty dowożą wynik?",
+      shortTitle: "Które kontrakty są ryzykowne?",
+      seoTitle: "Analiza kontraktów, serwisu i ekip | RDC-Analitics Rzeszów",
+      seoDescription:
+        "Analiza danych dla firm serwisowych: kontrakty, ekipy, zadania, SLA, opóźnienia, reklamacje i wykorzystanie zespołów.",
+      seoKeywords:
+        "firma serwisowa Rzeszów, analiza kontraktów, wykorzystanie ekip, SLA, zadania serwisowe",
+      canonicalPath: "/realizacje/service-ops/",
       dlaJakiejFirmy:
         "Dla firm serwisowych, instalacyjnych i utrzymaniowych, które pracują na ekipach, kontraktach, zgłoszeniach i SLA.",
       problem:

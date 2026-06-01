@@ -134,6 +134,139 @@ function getOrderedDemos() {
   return siteData.demos.slice().sort((left, right) => left.order - right.order);
 }
 
+function getAbsoluteUrl(path = "/") {
+  if (path.startsWith("http")) {
+    return path;
+  }
+
+  const normalizedPath = path.startsWith("/") ? path : `/${path}`;
+  return `${siteData.site.baseUrl}${normalizedPath}`;
+}
+
+function upsertMeta(selector, attributes) {
+  let node = document.head.querySelector(selector);
+
+  if (!node) {
+    node = document.createElement("meta");
+    document.head.appendChild(node);
+  }
+
+  Object.entries(attributes).forEach(([name, value]) => {
+    node.setAttribute(name, value);
+  });
+}
+
+function upsertLink(rel, href) {
+  let node = document.head.querySelector(`link[rel="${rel}"]`);
+
+  if (!node) {
+    node = document.createElement("link");
+    node.rel = rel;
+    document.head.appendChild(node);
+  }
+
+  node.href = href;
+}
+
+function setStructuredData(id, payload) {
+  let node = document.getElementById(id);
+
+  if (!node) {
+    node = document.createElement("script");
+    node.type = "application/ld+json";
+    node.id = id;
+    document.head.appendChild(node);
+  }
+
+  node.textContent = JSON.stringify(payload);
+}
+
+function setPageMeta(meta) {
+  if (!meta) {
+    return;
+  }
+
+  const canonicalUrl = getAbsoluteUrl(meta.canonicalPath || "/");
+  const imageUrl = meta.image || siteData.site.defaultImage;
+
+  document.title = meta.title;
+  upsertMeta('meta[name="description"]', { name: "description", content: meta.description });
+  upsertMeta('meta[name="keywords"]', { name: "keywords", content: meta.keywords || "" });
+  upsertMeta('meta[property="og:title"]', { property: "og:title", content: meta.ogTitle || meta.title });
+  upsertMeta('meta[property="og:description"]', {
+    property: "og:description",
+    content: meta.ogDescription || meta.description,
+  });
+  upsertMeta('meta[property="og:type"]', { property: "og:type", content: meta.ogType || "website" });
+  upsertMeta('meta[property="og:url"]', { property: "og:url", content: canonicalUrl });
+  upsertMeta('meta[property="og:image"]', { property: "og:image", content: imageUrl });
+  upsertMeta('meta[property="og:locale"]', { property: "og:locale", content: siteData.site.locale });
+  upsertMeta('meta[name="twitter:card"]', { name: "twitter:card", content: "summary_large_image" });
+  upsertMeta('meta[name="twitter:title"]', { name: "twitter:title", content: meta.ogTitle || meta.title });
+  upsertMeta('meta[name="twitter:description"]', {
+    name: "twitter:description",
+    content: meta.ogDescription || meta.description,
+  });
+  upsertMeta('meta[name="twitter:image"]', { name: "twitter:image", content: imageUrl });
+  upsertLink("canonical", canonicalUrl);
+}
+
+function buildLocalBusinessSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: siteData.company.name,
+    url: siteData.site.baseUrl,
+    logo: siteData.site.logo,
+    image: siteData.site.defaultImage,
+    email: siteData.company.email,
+    telephone: siteData.company.phone,
+    areaServed: ["Rzeszów", "Podkarpacie", "Polska"],
+    description: siteData.home.seo.description,
+    knowsAbout: [
+      "inwentaryzacja danych",
+      "analiza procesu",
+      "analiza marży",
+      "dashboard dla właściciela",
+      "Looker Studio",
+    ],
+  };
+}
+
+function buildDemoSchema(demo) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: demo.seoTitle,
+    serviceType: "Inwentaryzacja danych i analiza procesu",
+    provider: {
+      "@type": "LocalBusiness",
+      name: siteData.company.name,
+      url: siteData.site.baseUrl,
+    },
+    areaServed: ["Rzeszów", "Podkarpacie"],
+    url: getAbsoluteUrl(demo.canonicalPath),
+    description: demo.seoDescription,
+    audience: {
+      "@type": "BusinessAudience",
+      audienceType: demo.publicName,
+    },
+  };
+}
+
+function buildItemListSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: getOrderedDemos().map((demo, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: demo.publicName,
+      url: getAbsoluteUrl(demo.canonicalPath),
+    })),
+  };
+}
+
 function fillCompanyFields() {
   const { email, phone, phoneHref, claim } = siteData.company;
 
@@ -186,15 +319,15 @@ function renderNavigation() {
   navs.forEach((nav) => {
     nav.innerHTML = `
       <a href="${getHomeHref("#start")}">Start</a>
-      <a href="${getHomeHref("#z-chaosu-do-porzadku")}">Z chaosu do porządku</a>
-      <a href="${getHomeHref("#panel-wlasciciela")}">Panel właściciela</a>
+      <a href="${getHomeHref("#jak-pomagamy")}">Jak pomagamy</a>
+      <a href="${getHomeHref("#co-sprawdzamy")}">Co sprawdzamy</a>
       <details class="nav-dropdown">
-        <summary>Dla kogo</summary>
+        <summary>Przykłady</summary>
         <div class="nav-dropdown-panel">
-          <a class="nav-dropdown-link nav-dropdown-all" href="${getHomeHref("#dla-kogo")}">
+          <a class="nav-dropdown-link nav-dropdown-all" href="${getHomeHref("#przyklady")}">
             <span>
-              <strong>Wszystkie typy realizacji</strong>
-              <small>Lista branż i przykładów paneli</small>
+              <strong>Wszystkie typy firm</strong>
+              <small>Branżowe przykłady analizy i dashboardów</small>
             </span>
           </a>
           ${demoLinks}
@@ -212,11 +345,9 @@ function renderAudienceCards() {
     return;
   }
 
-  const cards = siteData.demos
-    .slice()
-    .sort((left, right) => left.order - right.order)
+  const cards = getOrderedDemos()
     .map((demo) => {
-      const description = escapeHtml(demo.dlaJakiejFirmy);
+      const description = escapeHtml(demo.problem);
       const shortTitle = escapeHtml(demo.shortTitle);
       const publicName = escapeHtml(demo.publicName);
 
@@ -269,20 +400,20 @@ function renderQuestionCards(container, pages) {
 function buildDemoMetrics(demo) {
   return [
     {
-      label: "Widok",
-      value: "1 panel",
+      label: "Start",
+      value: "analiza",
     },
     {
       label: "Pytania",
-      value: `${demo.pages.length} kluczowe`,
+      value: `${demo.pages.length} główne`,
     },
     {
       label: "Obszar",
       value: demo.tags[0] || "firma",
     },
     {
-      label: "Decyzja",
-      value: "szybciej",
+      label: "Efekt",
+      value: "plan działań",
     },
   ];
 }
@@ -326,7 +457,7 @@ function renderDemoVisual(container, demo) {
         </span>
         <div>
           <strong>${escapeHtml(demo.publicName)}</strong>
-          <small>Przykładowy panel właściciela</small>
+          <small>Przykładowy efekt po analizie danych</small>
         </div>
       </div>
 
@@ -344,10 +475,10 @@ function renderDemoVisual(container, demo) {
       </div>
 
       <div class="demo-visual-footer">
-        <span>Sprzedaż</span>
-        <span>Koszty</span>
-        <span>Płatności</span>
-        <span>Wynik</span>
+        <span>Dane</span>
+        <span>Marża</span>
+        <span>Gotówka</span>
+        <span>Decyzja</span>
       </div>
     </div>
   `;
@@ -355,24 +486,25 @@ function renderDemoVisual(container, demo) {
 
 function renderDemoLink(demo) {
   document.querySelectorAll("[data-demo-link]").forEach((link) => {
-    if (demo.demoUrl) {
-      link.href = demo.demoUrl;
-      link.target = "_blank";
-      link.rel = "noopener";
-      link.textContent = "Otwórz demo Business Intelligence";
-      link.classList.remove("is-placeholder");
-      link.removeAttribute("aria-disabled");
+    if (!demo.demoUrl) {
+      link.remove();
       return;
     }
 
-    link.href = "#";
-    link.textContent = "Demo Business Intelligence: link wkrótce";
-    link.classList.add("is-placeholder");
-    link.setAttribute("aria-disabled", "true");
+    link.href = demo.demoUrl;
+    link.target = "_blank";
+    link.rel = "noopener";
+    link.textContent = "Zobacz demo";
+    link.classList.remove("is-placeholder");
+    link.removeAttribute("aria-disabled");
   });
 }
 
-function ensureDemoLinkButtons() {
+function ensureDemoLinkButtons(demo) {
+  if (!demo.demoUrl) {
+    return;
+  }
+
   const actionGroups = document.querySelectorAll(".demo-hero-copy .demo-actions, .demo-cta-card .demo-actions");
 
   actionGroups.forEach((group) => {
@@ -388,6 +520,24 @@ function setText(selector, value) {
   document.querySelectorAll(selector).forEach((node) => {
     node.textContent = value;
   });
+}
+
+function renderHomePage() {
+  if (document.body.dataset.page !== "home") {
+    return;
+  }
+
+  setPageMeta(siteData.home.seo);
+  setStructuredData("ld-local-business", buildLocalBusinessSchema());
+}
+
+function renderRealizationsPage() {
+  if (document.body.dataset.page !== "realizations") {
+    return;
+  }
+
+  setPageMeta(siteData.realizations.seo);
+  setStructuredData("ld-realizations", buildItemListSchema());
 }
 
 function renderDemoPage() {
@@ -413,16 +563,18 @@ function renderDemoPage() {
   renderTags(document.querySelector("[data-demo-tags]"), demo.tags);
   renderQuestionCards(document.querySelector("[data-demo-pages]"), demo.pages);
   renderDemoVisual(document.querySelector("[data-demo-visual]") || document.querySelector(".demo-preview-frame"), demo);
-  setText(".demo-preview-note", "Przykładowa grafika w stylu strony głównej. Link do realnego demo dodasz później.");
-  ensureDemoLinkButtons();
+  setText(".demo-preview-note", "Przykładowa grafika pokazuje kierunek raportu po analizie danych.");
+  ensureDemoLinkButtons(demo);
   renderDemoLink(demo);
 
-  document.title = `RDC | ${demo.publicName}`;
-
-  const descriptionNode = document.querySelector('meta[name="description"]');
-  if (descriptionNode) {
-    descriptionNode.content = demo.problem;
-  }
+  setPageMeta({
+    title: demo.seoTitle,
+    description: demo.seoDescription,
+    keywords: demo.seoKeywords,
+    canonicalPath: demo.canonicalPath,
+    ogType: "article",
+  });
+  setStructuredData("ld-demo-service", buildDemoSchema(demo));
 }
 
 function renderYear() {
@@ -437,4 +589,6 @@ renderYear();
 renderNavigation();
 fillCompanyFields();
 renderAudienceCards();
+renderHomePage();
+renderRealizationsPage();
 renderDemoPage();
