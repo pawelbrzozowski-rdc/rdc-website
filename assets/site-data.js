@@ -64,22 +64,27 @@ window.RDCSiteData = Object.freeze({
         "Nie zaczynamy od wdrażania ERP ani od dokładania kolejnego narzędzia. Najpierw robimy porządek w tym, co już masz, i pokazujemy, które działania mają największy sens.",
       steps: [
         {
-          title: "1 rozmowa",
+          label: "Pierwszy krok",
+          title: "Pierwsza rozmowa",
           text: "Ustalamy, jak działa firma: sprzedaż, realizacja, faktury, płatności, magazyn albo zlecenia.",
         },
         {
+          label: "Drugi krok",
           title: "Inwentaryzacja danych",
           text: "Sprawdzamy pliki, systemy, raporty i miejsca, w których dziś powstają ważne liczby.",
         },
         {
+          label: "Trzeci krok",
           title: "Analiza luk",
           text: "Pokazujemy, czego brakuje, co jest liczone ręcznie i gdzie przez dane trudno podjąć decyzję.",
         },
         {
+          label: "Czwarty krok",
           title: "Plan działań",
           text: "Dostajesz prostą listę: co uporządkować najpierw, co może poczekać i czego nie warto komplikować.",
         },
         {
+          label: "Piąty krok",
           title: "Panel albo lekkie wdrożenie",
           text: "Jeśli ma to sens, budujemy czytelny dashboard albo pomagamy dobrać prostszy układ pracy.",
         },
