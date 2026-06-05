@@ -143,7 +143,7 @@ window.RDCSiteData = Object.freeze({
       order: 1,
       icon: "project",
       tone: "cyan",
-      demoUrl: "https://datastudio.google.com/s/j5GYyfFN-ZE",
+      demoUrl: "https://datastudio.google.com/reporting/1f7d2fca-8546-48e3-8d7e-7ffd257473b1",
       publicName: "Firmy projektowo-montażowe",
       shortTitle: "Czy projekt naprawdę zarabia?",
       seoTitle: "Analiza marży projektów i montaży | RDC-Analitics Rzeszów",
